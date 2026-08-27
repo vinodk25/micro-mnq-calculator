@@ -1,0 +1,16 @@
+{
+  "name": "MNQ Command Desk",
+  "short_name": "MNQ Desk",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0e14",
+  "theme_color": "#0a0e14",
+  "description": "Risk calculator and trade journal for Micro NQ futures across 5ers, Tradiefy, Apex, and Lucid prop firm rules.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
