@@ -389,6 +389,12 @@
         </div>
         <p style="color:var(--sub); font-size:12px; margin-top:10px;">Based on today's journal entries. Once either limit is breached, the STOP TRADING banner activates across the app.</p>
       </div>
+
+      <div class="panel" style="margin-top:20px; border-color:var(--red);">
+        <h2 style="color:var(--red);">Danger Zone</h2>
+        <p style="color:var(--sub); font-size:12px; margin-bottom:14px;">Wipes everything stored on this device — calculator settings, firm selection, and the full trade journal. Cannot be undone. Export your journal first if you want a backup.</p>
+        <button class="ghost" id="resetAllBtn" style="color:var(--red); border-color:var(--red);">Reset All Data</button>
+      </div>
     </div>
 
   </main>
@@ -641,6 +647,18 @@
       renderGuard();
     }
   };
+
+  const resetAllBtn = document.getElementById("resetAllBtn");
+  if(resetAllBtn){
+    resetAllBtn.onclick = ()=>{
+      if(confirm("Reset ALL data on this device? This wipes your calculator settings AND the entire trade journal, and cannot be undone.")){
+        if(confirm("Are you absolutely sure? This is your last chance to cancel.")){
+          localStorage.clear();
+          location.reload();
+        }
+      }
+    };
+  }
 
   $("filterResult").onchange = renderJournal;
   $("filterDate").oninput = renderJournal;
